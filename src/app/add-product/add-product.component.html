@@ -1,0 +1,43 @@
+<app-talbar></app-talbar>
+<form>
+    <!-- Message de succès -->
+
+<div class="mahi_holder">
+  <div class="container">
+    <div class="row bg_1">
+    
+      <div class="col-3">
+          <input   [(ngModel)]="newProduct.nomProduit"class="effect-2" name="nomProduit" type="text" placeholder="nameProduct"  >
+            <span class="focus-border"></span>
+        </div>
+
+      <div class="col-3">
+          <input [(ngModel)]="newProduct.prixProduit" class="effect-3" name="prixProduit" type="number" placeholder="PrixProduct"  >
+            <span class="focus-border"></span>
+        </div>        
+      
+      <div class="col-3">
+      <input   [(ngModel)]="newProduct.dateCreation"class="effect-2"  name="dateCreation" type="text"  type="date" >
+        <span class="focus-border"></span>
+    </div>
+
+    </div> 
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Categorie</label>
+      <select class="form-control " id="idCat" name="idCat" [(ngModel)]="newIdCat">
+          <option *ngFor="let cat of categories" [value]="cat.idCategorie">
+              {{cat.nomCategorie}}
+          </option>
+      </select>
+  </div> 
+  <br><br>
+      <button  type ="submit" class="button-58" (click)="addProduit()" role="button">Add Product </button> 
+  </div> 
+</div>
+
+    <!-- HTML !-->
+  
+
+  </form>
+
+  

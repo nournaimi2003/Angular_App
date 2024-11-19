@@ -1,0 +1,35 @@
+<app-talbar></app-talbar>
+<div class="container">
+<div class="card shadow mb-4">
+<div class="card-body">
+<table class="table table-striped">
+    <tr>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Prix</th>
+      <th>Date de Création</th>
+      <th>Categorie</th>
+      <th>Action</th>
+    </tr>
+
+  <tbody *ngFor=" let product of products">
+    <tr>
+      <td>{{product.idProduit}}</td>
+      <td>{{product.nomProduit}}</td>
+      <td>{{product.prixProduit}} D</td>
+      <td>{{product.dateCreation | date:'dd/MM/yyyy'}}</td>
+      <td>{{product.categorie?.nomCategorie}}</td> 
+      <td><button  class ="delete" mat-icon-button aria-label="Delete" (click)="supprimerProduit(product)">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button  class ="edit" mat-icon-button aria-label="Edit" [routerLink]="['/update',product.idProduit]">
+        <mat-icon>border_color</mat-icon>
+      </button>
+    </td>
+    </tr>
+    
+  </tbody>
+</table>
+</div>
+</div>
+</div>

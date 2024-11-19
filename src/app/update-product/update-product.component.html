@@ -1,0 +1,35 @@
+<app-talbar></app-talbar>
+<div class="mahi_holder">
+  <div class="container">
+    <div class="row bg_1">
+      
+    
+      <div class="col-3">
+          <input   [(ngModel)]="currentProduit.nomProduit" class="effect-2" type="text" placeholder="nameProduct"  >
+            <span class="focus-border"></span>
+        </div>
+      <div class="col-3">
+          <input [(ngModel)]="currentProduit.prixProduit" class="effect-3" type="number" placeholder="PrixProduct"  >
+            <span class="focus-border"></span>
+        </div>        
+      <div class="col-3">
+          <input  [ngModel]="currentProduit.dateCreation | date: 'yyyy-MM-dd'" 
+          (ngModelChange)=" currentProduit.dateCreation= $event"  class="effect-4" type="date" placeholder="dateCreation" >
+            <span class="focus-border"></span>
+        </div>
+        
+        <div class="col-sm-4 col-md-4 col-lg-4">
+          <label>Categorie</label>
+          <select class="form-control " id="idCat" name="idCat" [(ngModel)]="updatedCatId">
+              <option *ngFor="let cat of categories" [value]="cat.idCategorie">
+                  {{cat.nomCategorie}}
+              </option>  
+          </select>
+      </div> 
+    </div> <br><br>
+  
+    <button  type ="submit" class="button-58" (click)="updateProduit()" role="button" >Update Product </button>
+
+
+
+  
